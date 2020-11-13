@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'methodofCalculation.dart';
 import 'WidgetContainer.dart';
 
-
 void main() {
   runApp(MyApp());
 }
@@ -45,20 +44,18 @@ class _CalculatorState extends State<Calculator> {
           textButton == '8' ||
           textButton == '9' ||
           textButton == '0' ||
-          textButton == '.'||
-          textButton=='00') {
+          textButton == '.' ||
+          textButton == '00') {
         result = result + textButton;
-        tempResult = result;
-      
+       
       } else if (textButton == '+' ||
           textButton == '-' ||
-          textButton == 'X' ||
+          textButton == 'x' ||
           textButton == '/' ||
           textButton == '%') {
         result = result + textButton;
-      
       } else if (textButton == '=') {
-        typedText = result.split(new RegExp("[/X%+-]"));
+        typedText = result.split(new RegExp("[/x%+-]"));
         print(typedText);
 
         temp1 = double.parse(typedText[0]);
@@ -70,7 +67,7 @@ class _CalculatorState extends State<Calculator> {
         if (result.contains('/')) {
           result = m.divide();
         }
-        if (result.contains('X')) {
+        if (result.contains('x')) {
           result = m.multiply();
         }
         if (result.contains('%')) {
@@ -81,7 +78,8 @@ class _CalculatorState extends State<Calculator> {
         }
       } else if (textButton == 'C') {
         result = '';
-      } else if (textButton == 'x') {
+      } else if (textButton == 'X') {
+        tempResult=result;
         result = tempResult.substring(0, tempResult.length - 1);
       }
     });
@@ -100,7 +98,7 @@ class _CalculatorState extends State<Calculator> {
           Expanded(
             flex: 3,
             child: Container(
-              color:backGroundColor,
+              color: backGroundColor,
               alignment: Alignment.bottomRight,
               child: Text(
                 result,
@@ -119,7 +117,8 @@ class _CalculatorState extends State<Calculator> {
                       Expanded(
                           child: WidgetContainer(
                         infoWidegt: Text(
-                          'C',style: textStyle,
+                          'C',
+                          style: textStyle,
                           textAlign: TextAlign.center,
                         ),
                         onPressed: () {
@@ -129,7 +128,8 @@ class _CalculatorState extends State<Calculator> {
                       Expanded(
                           child: WidgetContainer(
                         infoWidegt: Text(
-                          '%',style: textStyle,
+                          '%',
+                          style: textStyle,
                           textAlign: TextAlign.center,
                         ),
                         onPressed: () {
@@ -138,15 +138,19 @@ class _CalculatorState extends State<Calculator> {
                       )),
                       Expanded(
                           child: WidgetContainer(
-                        infoWidegt: Icon(backspace_outlined,size: 35.0,),
+                        infoWidegt: Icon(
+                          backspace_outlined,
+                          size: 35.0,
+                        ),
                         onPressed: () {
-                          buttonPressed(textButton = 'x');
+                          buttonPressed(textButton = 'X');
                         },
                       )),
                       Expanded(
                           child: WidgetContainer(
                         infoWidegt: Text(
-                          '/',style: textStyle,
+                          '/',
+                          style: textStyle,
                           textAlign: TextAlign.center,
                         ),
                         onPressed: () {
@@ -163,7 +167,8 @@ class _CalculatorState extends State<Calculator> {
                       Expanded(
                           child: WidgetContainer(
                         infoWidegt: Text(
-                          '7',style: textStyle,
+                          '7',
+                          style: textStyle,
                           textAlign: TextAlign.center,
                         ),
                         onPressed: () {
@@ -173,7 +178,8 @@ class _CalculatorState extends State<Calculator> {
                       Expanded(
                           child: WidgetContainer(
                         infoWidegt: Text(
-                          '8',style: textStyle,
+                          '8',
+                          style: textStyle,
                           textAlign: TextAlign.center,
                         ),
                         onPressed: () {
@@ -183,7 +189,8 @@ class _CalculatorState extends State<Calculator> {
                       Expanded(
                           child: WidgetContainer(
                         infoWidegt: Text(
-                          '9',style: textStyle,
+                          '9',
+                          style: textStyle,
                           textAlign: TextAlign.center,
                         ),
                         onPressed: () {
@@ -192,12 +199,9 @@ class _CalculatorState extends State<Calculator> {
                       )),
                       Expanded(
                           child: WidgetContainer(
-                        infoWidegt: Text(
-                          'x',style: textStyle,
-                          textAlign: TextAlign.center,
-                        ),
+                        infoWidegt: Icon(clear),
                         onPressed: () {
-                          buttonPressed(textButton = 'X');
+                          buttonPressed(textButton = 'x');
                         },
                       )),
                     ],
@@ -210,7 +214,8 @@ class _CalculatorState extends State<Calculator> {
                       Expanded(
                           child: WidgetContainer(
                         infoWidegt: Text(
-                          '4',style: textStyle,
+                          '4',
+                          style: textStyle,
                           textAlign: TextAlign.center,
                         ),
                         onPressed: () {
@@ -220,7 +225,8 @@ class _CalculatorState extends State<Calculator> {
                       Expanded(
                           child: WidgetContainer(
                         infoWidegt: Text(
-                          '5',style: textStyle,
+                          '5',
+                          style: textStyle,
                           textAlign: TextAlign.center,
                         ),
                         onPressed: () {
@@ -230,7 +236,8 @@ class _CalculatorState extends State<Calculator> {
                       Expanded(
                           child: WidgetContainer(
                         infoWidegt: Text(
-                          '6',style: textStyle,
+                          '6',
+                          style: textStyle,
                           textAlign: TextAlign.center,
                         ),
                         onPressed: () {
@@ -240,7 +247,8 @@ class _CalculatorState extends State<Calculator> {
                       Expanded(
                           child: WidgetContainer(
                         infoWidegt: Text(
-                          '-',style: textStyle,
+                          '-',
+                          style: textStyle,
                           textAlign: TextAlign.center,
                         ),
                         onPressed: () {
@@ -257,7 +265,8 @@ class _CalculatorState extends State<Calculator> {
                       Expanded(
                           child: WidgetContainer(
                         infoWidegt: Text(
-                          '1',style: textStyle,
+                          '1',
+                          style: textStyle,
                           textAlign: TextAlign.center,
                         ),
                         onPressed: () {
@@ -267,7 +276,8 @@ class _CalculatorState extends State<Calculator> {
                       Expanded(
                           child: WidgetContainer(
                         infoWidegt: Text(
-                          '2',style: textStyle,
+                          '2',
+                          style: textStyle,
                           textAlign: TextAlign.center,
                         ),
                         onPressed: () {
@@ -277,7 +287,8 @@ class _CalculatorState extends State<Calculator> {
                       Expanded(
                           child: WidgetContainer(
                         infoWidegt: Text(
-                          '3',style: textStyle,
+                          '3',
+                          style: textStyle,
                           textAlign: TextAlign.center,
                         ),
                         onPressed: () {
@@ -287,7 +298,8 @@ class _CalculatorState extends State<Calculator> {
                       Expanded(
                           child: WidgetContainer(
                         infoWidegt: Text(
-                          '+',style: textStyle,
+                          '+',
+                          style: textStyle,
                           textAlign: TextAlign.center,
                         ),
                         onPressed: () {
@@ -304,7 +316,8 @@ class _CalculatorState extends State<Calculator> {
                       Expanded(
                           child: WidgetContainer(
                         infoWidegt: Text(
-                          '0',style: textStyle,
+                          '0',
+                          style: textStyle,
                           textAlign: TextAlign.center,
                         ),
                         onPressed: () {
@@ -314,7 +327,8 @@ class _CalculatorState extends State<Calculator> {
                       Expanded(
                           child: WidgetContainer(
                         infoWidegt: Text(
-                          '00',style: textStyle,
+                          '00',
+                          style: textStyle,
                           textAlign: TextAlign.center,
                         ),
                         onPressed: () {
@@ -324,7 +338,8 @@ class _CalculatorState extends State<Calculator> {
                       Expanded(
                           child: WidgetContainer(
                         infoWidegt: Text(
-                          '.',style: textStyle,
+                          '.',
+                          style: textStyle,
                           textAlign: TextAlign.center,
                         ),
                         onPressed: () {

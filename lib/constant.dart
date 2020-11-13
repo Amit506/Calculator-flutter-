@@ -9,5 +9,6 @@ const textStyle2= TextStyle(
   fontWeight: FontWeight.w400,
 );
  const IconData backspace_outlined = IconData(0xe072, fontFamily: 'MaterialIcons');
+ const clear = IconData(58972,fontFamily:'MaterialIcons');
  const backGroundColor = Color(0xFFBBDEFB);
  
